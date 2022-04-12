@@ -1,39 +1,41 @@
+input {
+  border: 2px solid black;
+  height: 100%;
+  width: 60%;
+  margin-top: 2px;
+  border-radius: 25px;
+  padding: 10px;
+}
 
-.center{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    margin-left: 38%;
+button {
+  width: 25%;
+  height: 100%;
 }
-table{
-    text-align:center;
+.email {
+  align-content: flex-end;
+  height: 48px;
+  width: 48px;
 }
-input{
-    border: solid;
-    height: 48px;
-    width: 360px;
-     margin-top:2px;
-     border-radius: 25px;
-    
-     
-}
-img{
-    width:360px;
-    height:360px;
-   
-}
-button{
-    width:234px;
-    height:34px;
-    
 
+.auth-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-    .email{
-   
-    
-    align-content: flex-end;
-    height: 48px;
-    width: 48px;
-    
-    
-} 
+
+.fa-envelope {
+  font-size: 40px;
+}
+
+.fa-key {
+  font-size: 40px;
+}
+
+.fa-user {
+  font-size: 200px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: center;
+}

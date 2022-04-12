@@ -1,43 +1,33 @@
-<div class="row">
-    <div class="col">
-        <img src="/assets/avatarUtente.png">
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col-3"><img class="email" src="/assets/email.png"> </div>
-
-            <div class="col-9"><input type="text" name="email" placeholder="email"></div>
-
+<div class="container">
+    <div class="row auth-row">
+        <div class="col-10 my-2">
+            <i class="fas fa-user"></i>
         </div>
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col"><img class="email" src="/assets/pass.png"> </div>
-            <div class="col"><input type="password" name="password" placeholder="password" #password></div>
+        <div class="col my-2">
+          <div class="row input-row">
+            <div class="col-1"><i class="far fa-envelope"></i></div>
+            <div class="col-5">
+              <input type="text" name="email" placeholder="email" />
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="col-3">
-
-    </div>
-
-
-    <!-- <img   src="/assets/avatarUtente.png"> 
-        <br>
-        <div class="center">
-        <img class="email" src="/assets/email.png"> 
-        <input type="text" name="email" placeholder="email">
+        <div class="col my-2">
+          <div class="row input-row">
+            <div class="col-1"><i class="fas fa-key"></i></div>
+            <div class="col-5">
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                #password
+              />
+            </div>
+          </div>
         </div>
-        <div class="center">
-        <img class="email" src="/assets/pass.png"> 
-        <input type="password" name="password" placeholder="password" #password>
+        <div class="col my-2">
+              <button class="btn btn-primary mx-2 p-1" (click)="registrati(password.value)">Registrati</button>
+              <button class="btn btn-primary mx-2 p-1" (click)="login()">Login</button> 
         </div>
-        <br>
-        <div class="center">
-        <button (click)="registrati(password.value)">Registrati</button>
-        <button (click)="login()">Login</button> 
-        
-        </div> -->
-
-
-
+      </div>
 </div>
+
