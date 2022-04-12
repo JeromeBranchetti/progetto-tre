@@ -1,0 +1,39 @@
+
+.center{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-left: 38%;
+}
+table{
+    text-align:center;
+}
+input{
+    border: solid;
+    height: 48px;
+    width: 360px;
+     margin-top:2px;
+     border-radius: 25px;
+    
+     
+}
+img{
+    width:360px;
+    height:360px;
+   
+}
+button{
+    width:234px;
+    height:34px;
+    
+
+}
+    .email{
+   
+    
+    align-content: flex-end;
+    height: 48px;
+    width: 48px;
+    
+    
+} 
