@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand fs-3" href="#"><i class="fas fa-database me-3"></i> <span style="font-family: 'Pacifico', cursive;">Research Database</span></a>
+      <a class="navbar-brand fs-3" routerLink="/home"><i class="fas fa-database me-3"></i> <span style="font-family: 'Pacifico', cursive;">Research Database</span></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -21,8 +21,8 @@
                             <i class="fas fa-user-circle fs-3"></i>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li><a class="dropdown-item" href="#">Edit Page</a></li>
-                          <li><a class="dropdown-item" href="#">LogOut</a></li>
+                          <li><a class="dropdown-item" routerLink="/edit">Edit Page</a></li>
+                          <li><a class="dropdown-item" routerLink="/login">LogOut</a></li>
                         </ul>
                       </li>
                 </ul>

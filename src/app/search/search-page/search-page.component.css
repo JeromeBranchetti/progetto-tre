@@ -1,0 +1,30 @@
+.search-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-row {
+background-color: white;
+width: 100%;
+ display: flex;
+ justify-content: space-between;
+ border: 1px solid rgb(212, 212, 212);
+ border-radius: 25px;
+ padding: 10px;
+ 
+ 
+}
+
+input {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
