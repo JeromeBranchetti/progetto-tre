@@ -24,5 +24,7 @@ Navbar: (componente a se) Jerome
 •	N pagine per altri risultati 
 	Uguale a seconda pagina 
 
+Pagina gestionale
+
 
 
