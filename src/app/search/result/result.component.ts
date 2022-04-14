@@ -2,6 +2,8 @@ import { Ser } from './../ser';
 import { HttpClient} from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Data } from 'src/app/data.model';
+import { TmplAstRecursiveVisitor } from '@angular/compiler';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,15 +20,15 @@ export class ResultComponent implements OnInit {
   constructor(private http:HttpClient, private ser:Ser) { }
 
   setDati(dati:Data[]){
-    for(let i of this.vetD){
-      for(let j of dati){
-      if(i.id===j.id){
+     for(let i of this.vetD){
+    for(let j of dati){
+       if(i.id===j.id){
         
-        return 
+         return 
        
-      }
+       }
 
-    }}
+     }}
     this.vetD.push(...dati);
     
   }
@@ -48,14 +50,24 @@ export class ResultComponent implements OnInit {
        //promise
     })}
   console.log("fineGetDati")
+  console.log("vetD")
   console.log(this.vetD)
  }
-    
+    avvio(s:string[]){
+      console.log(s)
+      this.vet=s;
+      this.getDati();
+    }
 
   
   ngOnInit(): void {
-    this.vet=this.ser.getVet();
-     this.getDati();
+
+    this.ser.Emit.subscribe(item => this.avvio(item))
+    
+    
+    
+    
+    
 
   }
 

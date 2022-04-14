@@ -14,12 +14,16 @@ export class SearchPageComponent implements OnInit {
   constructor(public service:Ser,private route: Router) { }
 
  find(s:string){
+  
    s=s.trim();
   console.log(s)
-  this.service.vet=s.split(" ");
+  let v=s.split(" ");
+  this.service.vet=v;
+  
+  this.service.Emit.emit(v);
   
   
-  this.route.navigate(['result']);
+   this.route.navigate(['result']);
   
 
   }
