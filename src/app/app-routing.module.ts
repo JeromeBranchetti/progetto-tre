@@ -1,3 +1,4 @@
+import { ResultComponent } from './search/result/result.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchPageComponent } from './search/search-page/search-page.component';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: 'home', component: SearchPageComponent},
   {path: 'edit', component: AdminPageComponent},
   {path: 'login', component: AutenticazioneComponent},
+  {path:'result', component: ResultComponent},
   {path: '**', component: NotFoundComponent }
 ];
 
