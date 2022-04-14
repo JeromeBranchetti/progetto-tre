@@ -9,10 +9,10 @@
                     <form >
                         <div class="row input-row">
                             <div class="col-5">
-                                <input class="" type="text" placeholder="type search here...">
+                                <input class="" type="text" placeholder="type search here..." #ric>
                             </div>
                             <div class="col-2">
-                                <button class="btn btn-light" type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button class="btn btn-light" type="submit" (click)="find(ric.value)"> <i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
                     </form>
