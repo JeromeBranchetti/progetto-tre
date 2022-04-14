@@ -7,11 +7,10 @@ import { AutenticazioneComponent } from './autenticazione/autenticazione.compone
 import { AdminPageComponent } from './admin-page/admin-page.component';
 
 const routes: Routes = [
-  {path: '', component: SearchPageComponent},
-  {path: 'home', component: SearchPageComponent},
+  {path: '', component: ResultComponent},
+  {path:'result', component: ResultComponent},
   {path: 'edit', component: AdminPageComponent},
   {path: 'login', component: AutenticazioneComponent},
-  {path:'result', component: ResultComponent},
   {path: '**', component: NotFoundComponent }
 ];
 

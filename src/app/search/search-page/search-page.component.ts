@@ -23,7 +23,7 @@ export class SearchPageComponent implements OnInit {
   this.service.Emit.emit(v);
   
   
-   this.route.navigate(['result']);
+  //  this.route.navigate(['result']);
   
 
   }

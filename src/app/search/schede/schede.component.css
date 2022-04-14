@@ -1,8 +1,10 @@
-.titolo{
-    color:blue;
-    font-size:22px;
-    font-family: Georgia;
-}a {
-    color: #e91e63;
-    text-decoration: underline;
+.titolo {
+  color: blue;
+  font-size: 22px;
+  font-family: Georgia;
+}
+
+a {
+  color: #e91e63;
+  text-decoration: underline;
 }
