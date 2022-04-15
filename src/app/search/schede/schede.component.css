@@ -16,3 +16,7 @@ a {
     box-sizing: border-box;
     text-align: left;
 }
+
+button{
+  float:right;
+}

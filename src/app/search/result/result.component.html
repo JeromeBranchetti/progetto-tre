@@ -3,18 +3,34 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div *ngFor="let i of vetD">
+            
+                <div  *ngFor="let i of pagine, let  x=index">
+                <td><button  (click)="contatore(x)">{{x+1}}</button></td>
+                </div>
+            
+            <div *ngIf="caricato">
+            <app-schede *ngIf="vetD.length>= 1+indice" [dato]="vetD[0+indice]"></app-schede>
+            <app-schede *ngIf="vetD.length >= 2+indice" [dato]="vetD[1+indice]"></app-schede> 
+            <app-schede *ngIf="vetD.length >= 3+indice" [dato]="vetD[2+indice]"></app-schede> 
+            <app-schede *ngIf="vetD.length >= 4+indice" [dato]="vetD[3+indice]"></app-schede> 
+            <app-schede *ngIf="vetD.length >= 5+indice " [dato]="vetD[4+indice]"></app-schede> 
+           
+             </div>
+              <!-- <div *ngFor="let i of vetD">
                 <div class="row data-row">
                     <app-schede [dato]="i"></app-schede>
                 </div>
                 <br>
 
             
-             </div>
+             </div>  -->
+            
         </div>
     </div>
 </div>
-
+<div class="foot"*ngIf="Admin==true">
+<button class="add" title="clicca per aggiungere" >+</button>
+</div>
  
  
  

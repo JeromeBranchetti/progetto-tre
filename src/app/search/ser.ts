@@ -5,6 +5,7 @@ import { Injectable, Output,EventEmitter} from "@angular/core";
     providedIn: 'root'
   })
   export class Ser {
+    Admin=false;
     vet:string[]=[]
     @Output() Emit:EventEmitter<string []> =new EventEmitter<string[]>();
 

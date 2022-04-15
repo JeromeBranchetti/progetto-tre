@@ -3,7 +3,8 @@
 <tr><a href={{dato.url}}>{{dato.url}}</a></tr> -->
 
 <div class="col titolo">
-    {{dato.titolo}}
+    {{dato.id}}
+    <button *ngIf="Admin==true" (click)="delete()">elimina</button>
 </div>
 <div class="col">
     <p>{{dato.descrizione}}</p>
