@@ -8,6 +8,7 @@ import { Injectable, Output,EventEmitter} from "@angular/core";
     Admin=false;
     vet:string[]=[]
     @Output() Emit:EventEmitter<string []> =new EventEmitter<string[]>();
+    @Output() Log:EventEmitter<boolean> =new EventEmitter<boolean>();
 
 
     getVet(){
@@ -16,5 +17,8 @@ import { Injectable, Output,EventEmitter} from "@angular/core";
      toString(){
        console.log(this.vet)
      }
-
+     setMode(b:boolean){
+       this.Admin=b;
+       this.Log.emit(b);
+     }
   }

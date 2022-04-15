@@ -116,6 +116,6 @@ export class ResultComponent implements OnInit {
    }
   ngOnInit(): void {
     this.ser.Emit.subscribe((item) => this.avvio(item));
-    this.Admin=this.ser.Admin;
+    this.ser.Log.subscribe((bool) => this.Admin=bool);
   }
     }

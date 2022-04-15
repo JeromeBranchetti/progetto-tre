@@ -14,7 +14,7 @@ export class SchedeComponent implements OnInit {
   constructor(private ser:Ser, private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.Admin=this.ser.Admin;
+    this.ser.Log.subscribe((bool) => this.Admin=bool);
     console.log(this.dato)
   }
  
