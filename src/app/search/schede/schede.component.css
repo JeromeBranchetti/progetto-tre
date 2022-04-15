@@ -1,25 +1,17 @@
-<<<<<<< HEAD
-.titolo{
-    color:blue;
-    font-size:22px;
-    font-family: Georgia;
-    text-align: left;
-}a {
+
+
+a {
     color: #e91e63;
     text-decoration: underline;
     text-align: left;
-=======
+}
 .titolo {
   color: blue;
   font-size: 22px;
   font-family: Georgia;
 }
 
-a {
-  color: #e91e63;
-  text-decoration: underline;
->>>>>>> da2f7d23c8ba57b1f3ca87e5d6dc4d11601e4a88
-}
+
 *, ::after, ::before {
     box-sizing: border-box;
     text-align: left;
