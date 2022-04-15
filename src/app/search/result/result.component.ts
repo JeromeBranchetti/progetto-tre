@@ -14,8 +14,8 @@ import { TmplAstRecursiveVisitor } from '@angular/compiler';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-  vet:string[]=[];
-  vetD:Data[]=[];
+  vet:string[]=[]; //vettore stringhe della ricerca
+  vetD:Data[]=[]; // vettore dati filtrati dal db
 
   constructor(private http:HttpClient, private ser:Ser) { }
 
@@ -47,13 +47,15 @@ export class ResultComponent implements OnInit {
        }}).subscribe(data=>{
         
         this.setDati(data);
-       //promise
+       
+        
     })}
   console.log("fineGetDati")
   console.log("vetD")
   console.log(this.vetD)
  }
     avvio(s:string[]){
+      this.vetD=[];
       console.log(s)
       this.vet=s;
       this.getDati();

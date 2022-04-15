@@ -2,7 +2,13 @@
     color:blue;
     font-size:22px;
     font-family: Georgia;
+    text-align: left;
 }a {
     color: #e91e63;
     text-decoration: underline;
+    text-align: left;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    text-align: left;
 }
