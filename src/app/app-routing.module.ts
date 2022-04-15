@@ -7,15 +7,15 @@ import { AutenticazioneComponent } from './autenticazione/autenticazione.compone
 import { AdminPageComponent } from './admin-page/admin-page.component';
 
 const routes: Routes = [
-  {path: '', component: ResultComponent},
-  {path:'result', component: ResultComponent},
-  {path: 'edit', component: AdminPageComponent},
-  {path: 'login', component: AutenticazioneComponent},
-  {path: '**', component: NotFoundComponent }
+  { path: '', component: ResultComponent },
+  { path: 'result', component: ResultComponent },
+  { path: 'edit', component: AdminPageComponent },
+  { path: 'login', component: AutenticazioneComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

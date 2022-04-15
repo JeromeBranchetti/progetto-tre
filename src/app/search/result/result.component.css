@@ -1,24 +1,27 @@
 .data-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
 }
-.add {
-    border-radius: 50px;
-    background-color: blue;
-    border-color: white;
-    color: white;
-    width: 100px;
-    height: 100px;
-    font-size: 30px;
-    float: right;
-    margin-right:20px;
-    position:absolute;
-    
-    
-  }
-  .foot{
-      z-index:10;
-      position:absolute;
-  }
+.add-div {
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  font-size: 35px;
+  position: fixed;
+  left: 95%;
+  bottom: 10%;
+  text-align: center;
+}
+
+.page-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-of-search {
+  min-height: calc(100vh - 68px);
+}

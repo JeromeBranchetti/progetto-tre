@@ -25,15 +25,14 @@ import { CommonModule } from '@angular/common';
     SearchPageComponent,
     NotFoundComponent,
     SchedeComponent,
-    
   ],
   imports: [
-    BrowserModule, 
-    AppRoutingModule, 
+    BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
