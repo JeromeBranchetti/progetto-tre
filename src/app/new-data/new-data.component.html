@@ -1,0 +1,14 @@
+
+<form [formGroup]="dato_form">
+<div *ngIf="Admin" class="form-group">
+<input type="text" placeholder="titolo" #titolo formControlName="titolo" class="form-control" [required]="true">
+<input type="text" placeholder="chiavi " #chiavi formControlName="chiavi" class="form-control" required >
+
+
+<textarea type="text" placeholder="descrizione " #descrizione formControlName="descrizione" class="form-control" required > </textarea>
+
+<input type="text" class="form-control" placeholder="url " #url formControlName="url" class="form-control" required >
+
+<input type="submit" (click)="aggiungi(titolo.value,chiavi.value,descrizione.value,url.value)" [disabled]="dato_form.invalid">
+</div>
+</form>

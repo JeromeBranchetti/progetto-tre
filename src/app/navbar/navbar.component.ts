@@ -13,6 +13,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
   modeAdmin() {
     this.admin = !this.admin;
-    this.ser.setMode(this.admin);
+     this.ser.setMode(this.admin);
   }
 }
