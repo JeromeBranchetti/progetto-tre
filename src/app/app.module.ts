@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SchedeComponent } from './search/schede/schede.component';
 import { CommonModule } from '@angular/common';
 import { LoadingSpinnerComponent } from './condiviso/loading-spinner/loading-spinner.component';
+import { NewDataComponent } from './new-data/new-data.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LoadingSpinnerComponent } from './condiviso/loading-spinner/loading-spi
     NotFoundComponent,
     SchedeComponent,
     LoadingSpinnerComponent,
+    NewDataComponent,
   ],
   imports: [
     BrowserModule,

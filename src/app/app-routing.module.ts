@@ -1,6 +1,7 @@
+import { NewDataComponent } from './new-data/new-data.component';
 import { ResultComponent } from './search/result/result.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { SearchPageComponent } from './search/search-page/search-page.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AutenticazioneComponent } from './autenticazione/autenticazione.component';
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'result', component: ResultComponent },
   { path: 'edit', component: AdminPageComponent },
   { path: 'autentication', component: AutenticazioneComponent },
+
+  { path: 'newData', component: NewDataComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -15,12 +15,8 @@ export class SearchPageComponent implements OnInit {
 
  find(s:string){
   
-   s=s.trim();
-  console.log(s)
-  let v=s.split(" ");
-  this.service.vet=v;
-  
-  this.service.Emit.emit(v);
+  this.service.s=s;
+  this.service.Emit.emit(s);
   
   
   //  this.route.navigate(['result']);

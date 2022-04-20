@@ -5,15 +5,22 @@
   align-content: flex-start;
 }
 .add-div {
-  border-radius: 25px;
+  border-radius: 50px;
   border-color: white;
   color: white;
-  font-size: 35px;
-  position: fixed;
   left: 95%;
   bottom: 10%;
+  font-size: 35px;
+  position: fixed;
   text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: royalblue;
+  margin-right:100px;
+  font-size:50px;
+  
 }
+
 
 .page-button-row {
   display: flex;

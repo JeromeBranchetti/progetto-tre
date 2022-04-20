@@ -1,7 +1,9 @@
+import { ResultComponent } from './../result/result.component';
 import { HttpClient } from '@angular/common/http';
 import { Ser } from './../ser';
 import { Component, Input, OnInit } from '@angular/core';
 import { Data } from 'src/app/data.model';
+
 
 @Component({
   selector: 'app-schede',
@@ -10,8 +12,8 @@ import { Data } from 'src/app/data.model';
 })
 export class SchedeComponent implements OnInit {
   @Input() dato!: Data;
-  Admin!: boolean;
-  constructor(private ser: Ser, private http: HttpClient) {}
+  Admin=false;
+  constructor(private ser: Ser, private http: HttpClient ,private res:ResultComponent) {}
 
   ngOnInit(): void {
     this.ser.Log.subscribe((bool) => (this.Admin = bool));
@@ -19,15 +21,14 @@ export class SchedeComponent implements OnInit {
   }
 
   delete() {
+    console.log(this.res.vetD)
     let url = 'http://localhost:3000/ricerca/' + this.dato.id;
-    console.log(url);
-    this.http
-      .get('http://localhost:3000/ricerca')
-      .subscribe((data) => console.log(data));
     this.http.delete(url).subscribe(() => {
       console.log('delete');
-      delete this.ser.vet[this.dato.id - 1];
-      this.ser.Emit.emit(this.ser.vet);
+    let n=this.res.vetD.indexOf(this.dato);
+    this.ser.Emit.emit(this.ser.s)
+     
+      
     });
   }
 }
