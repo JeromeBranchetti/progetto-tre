@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: ResultComponent },
   { path: 'result', component: ResultComponent },
   { path: 'edit', component: AdminPageComponent },
-  { path: 'login', component: AutenticazioneComponent },
+  { path: 'autentication', component: AutenticazioneComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
