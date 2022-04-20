@@ -14,5 +14,6 @@ export class NavbarComponent implements OnInit {
   modeAdmin() {
     this.admin = !this.admin;
      this.ser.setMode(this.admin);
+     this.ser.Log.emit(this.ser.Admin);
   }
 }
