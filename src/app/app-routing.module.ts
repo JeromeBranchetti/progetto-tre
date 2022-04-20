@@ -11,8 +11,9 @@ const routes: Routes = [
   { path: '', component: ResultComponent },
   { path: 'result', component: ResultComponent },
   { path: 'edit', component: AdminPageComponent },
-  { path: 'login', component: AutenticazioneComponent },
-  {path:'newData', component:NewDataComponent},
+  { path: 'autentication', component: AutenticazioneComponent },
+
+  { path: 'newData', component: NewDataComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

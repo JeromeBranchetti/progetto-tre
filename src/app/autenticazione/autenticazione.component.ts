@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
+import { AuthService, AuthResponseData } from './auth.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-autenticazione',
@@ -7,19 +10,45 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./autenticazione.component.css'],
 })
 export class AutenticazioneComponent implements OnInit {
+  loginMode: boolean = true;
   reCostructor = new RegExp('[a-zA-Z]{4,}[0-9]*[^w]', 'g');
-  errore = false;
+  error!: string;
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
   MathPassword(control: FormControl) {}
-  login() {}
-  registrati(s: string) {
-    console.log(s);
-    console.log(this.reCostructor.test(s));
-    if (!this.reCostructor.test(s)) {
-      this.errore = true;
+
+  switchMode() {
+    this.loginMode = !this.loginMode;
+  }
+
+  onSubmit(form: NgForm) {
+    if (!form.valid) {
+      return;
     }
+    const user = form.value.user;
+    const password = form.value.password;
+
+    let authObs: Observable<AuthResponseData>;
+
+    // if(this.loginMode) {
+    authObs = this.authService.logIn(user, password);
+    // }
+    // else {
+    //   // authObs = this.authService.signUp(email, password);
+    // }
+
+    authObs.subscribe(
+      (respData) => {
+        console.log(respData);
+        this.router.navigate(['./result'])
+      },
+      (errorMessage) => {
+        console.log(errorMessage);
+        this.error = errorMessage;
+      }
+    );
+    form.reset();
   }
 }

@@ -1,10 +1,13 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from './../autenticazione/auth.service';
+import { Injectable, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { Data } from '../data.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Ser {
+
   Admin = false;
   s!:string;
   vetD:Data[]=[]
@@ -12,9 +15,14 @@ export class Ser {
   @Output() Log: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() dati:EventEmitter<Data[]>  = new EventEmitter<Data[]>();
 
+  constructor(private authService: AuthService) {}
+
+  
+
   getVet() {
     return this.s;
   }
+  
   toString() {
     console.log(this.s);
   }
@@ -22,4 +30,6 @@ export class Ser {
     this.Admin = b;
     this.Log.emit(b);
   }
+
+  
 }

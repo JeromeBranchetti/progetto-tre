@@ -14,6 +14,7 @@ import { SearchPageComponent } from './search/search-page/search-page.component'
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SchedeComponent } from './search/schede/schede.component';
 import { CommonModule } from '@angular/common';
+import { LoadingSpinnerComponent } from './condiviso/loading-spinner/loading-spinner.component';
 import { NewDataComponent } from './new-data/new-data.component';
 
 @NgModule({
@@ -26,12 +27,14 @@ import { NewDataComponent } from './new-data/new-data.component';
     SearchPageComponent,
     NotFoundComponent,
     SchedeComponent,
+    LoadingSpinnerComponent,
     NewDataComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
