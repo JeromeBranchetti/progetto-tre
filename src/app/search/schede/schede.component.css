@@ -8,6 +8,18 @@
 
 }
 
+.data-row:hover {
+  
+  /* width: calc(100%); */
+  /* height: calc(100%); */
+  background-color: rgb(255, 255, 255);
+  
+  
+  transition: 0.3s;
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 255, 255);
+
+}
+
 a {
     color: #e91e63;
     text-decoration: underline;
