@@ -34,5 +34,5 @@
 .plus-letter {
   font-size: 90px;
   display: inline-block;
-  transform: translate(0, 30px);
+  transform: translate(0, -35px);
 }
