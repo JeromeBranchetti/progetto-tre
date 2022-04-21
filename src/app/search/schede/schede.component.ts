@@ -33,7 +33,7 @@ export class SchedeComponent implements OnInit {
     let url = 'http://localhost:3000/ricerca/' + this.dato.id;
     const headers = { Authorization: 'Bearer ' + this.auth.tocken };
     this.http.delete(url, { headers }).subscribe(() => {
-      let n = this.res.vetD.indexOf(this.dato);
+      
       this.ser.Emit.emit(this.ser.s);
     });
   }

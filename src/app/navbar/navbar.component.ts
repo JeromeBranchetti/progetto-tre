@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { Ser } from './../search/ser';
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../autenticazione/auth.service';
-import { Subscriber, Subscription, BehaviorSubject } from 'rxjs';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   isAuthenticated = false;
 
   constructor(
-    private ser: Ser,
+    
     private authService: AuthService,
     private router: Router
   ) {}

@@ -1,3 +1,7 @@
+
+<div *ngIf="!Admin">
+  <app-autenticazione></app-autenticazione>
+</div>
 <form [formGroup]="dato_form">
   <div *ngIf="Admin" class="form-group">
     <input

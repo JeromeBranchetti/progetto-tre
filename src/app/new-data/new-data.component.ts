@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/autenticazione/auth.service';
-import { Ser } from './../search/ser';
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -17,7 +17,7 @@ import { Data } from '../data.model';
   styleUrls: ['./new-data.component.css'],
 })
 export class NewDataComponent implements OnInit {
-  Admin!: boolean;
+  Admin=false;
   userSub!: Subscription;
   id!: number;
   dato_form = new FormGroup({
@@ -29,12 +29,12 @@ export class NewDataComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private ser: Ser,
+    
     private auth: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.ser.Log.subscribe((bool) => (this.Admin = bool));
+   
     this.userSub = this.auth.user.subscribe(user => {
       this.Admin = !!user; //!user ? false : true
      

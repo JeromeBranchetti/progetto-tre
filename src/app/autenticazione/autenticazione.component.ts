@@ -36,7 +36,7 @@ export class AutenticazioneComponent implements OnInit {
     authObs = this.authService.logIn(user, password);
 
     authObs.subscribe(
-      (respData) => {
+      () => {
         this.router.navigate(['./result']);
       },
       (errorMessage) => {

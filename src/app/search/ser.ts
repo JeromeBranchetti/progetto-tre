@@ -13,7 +13,7 @@ export class Ser {
   @Output() Log: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() dati: EventEmitter<Data[]> = new EventEmitter<Data[]>();
 
-  constructor(private authService: AuthService) {}
+  constructor() {}
 
   getVet() {
     return this.s;
