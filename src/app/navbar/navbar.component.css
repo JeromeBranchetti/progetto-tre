@@ -21,11 +21,11 @@
   display: flex;
   justify-content: end;
 }
-.fa-circle-user:before,
+/* .fa-circle-user:before,
 .fa-user-circle:before {
   content: "\f2bd";
   color: black;
-}
+} */
 .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
@@ -36,4 +36,12 @@
   border-bottom: 0;
   border-left: 0.3em solid transparent;
   color: black;
+}
+
+.fa-user-circle {
+  color: black;
+}
+
+.fa-user-circle:hover {
+  color: royalblue;
 }

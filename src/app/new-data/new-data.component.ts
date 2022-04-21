@@ -18,8 +18,13 @@ import { Data } from '../data.model';
 })
 export class NewDataComponent implements OnInit {
   Admin=false;
+  previewActive: boolean = false;
   userSub!: Subscription;
   id!: number;
+  titoloPreview: string = '';
+  chiaviPreview: string = '';
+  urlPreview: string = '';
+  descrizionePreview: string = '';
   dato_form = new FormGroup({
     chiavi: new FormControl(null, Validators.required),
     titolo: new FormControl(null, Validators.required),
@@ -57,5 +62,9 @@ export class NewDataComponent implements OnInit {
     this.http
       .post('http://localhost:3000/ricerca', dato, { headers })
       .subscribe(() => alert('CARICATO'));
+  }
+
+  onPreviewSwitch() {
+    this.previewActive = !this.previewActive;
   }
 }

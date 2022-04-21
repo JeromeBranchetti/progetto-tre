@@ -8,13 +8,13 @@
   border-radius: 50px;
   border-color: white;
   color: white;
-  left: 95%;
+  left: 93%;
   bottom: 10%;
   font-size: 35px;
   position: fixed;
   text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 92px;
+  height: 92px;
   background-color: royalblue;
   margin-right: 100px;
   font-size: 50px;
@@ -29,4 +29,10 @@
 
 .container-of-search {
   min-height: calc(100vh - 68px);
+}
+
+.plus-letter {
+  font-size: 90px;
+  display: inline-block;
+  transform: translate(0, 30px);
 }
