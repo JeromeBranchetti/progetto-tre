@@ -5,12 +5,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AutenticazioneComponent } from './autenticazione/autenticazione.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
 
 const routes: Routes = [
   { path: '', component: ResultComponent },
   { path: 'result', component: ResultComponent },
-  { path: 'edit', component: AdminPageComponent },
   { path: 'autentication', component: AutenticazioneComponent },
 
   { path: 'newData', component: NewDataComponent },

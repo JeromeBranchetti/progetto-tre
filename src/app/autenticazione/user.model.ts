@@ -1,10 +1,6 @@
 export class User {
-  
-    constructor(
-    private _tocken: string,
-    private _tockenExpirationDate: Date
-  ) {}
-  
+  constructor(private _tocken: string, private _tockenExpirationDate: Date) {}
+
   get tocken() {
     if (
       !this._tockenExpirationDate ||

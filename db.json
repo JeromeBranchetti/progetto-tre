@@ -1,13 +1,6 @@
 {
   "ricerca": [
     {
-      "id": 1,
-      "titolo": "Home Aubay. - Aubay |",
-      "descrizione": "Activity areas. Aubay lavora solo con i principali attori di mercato ed è particolarmente presente in quello bancario e assicurativo. Aubay lavora ...",
-      "chiavi": "consulenza,it, angular",
-      "url": "https://www.aubay.it"
-    },
-    {
       "id": 2,
       "titolo": "Angular",
       "descrizione": "Angular is a platform for building mobile and desktop web applications. Join the community of millions of developers who build compelling user interfaces with ...",
@@ -64,130 +57,11 @@
       "url": "https://www.typescriptlang.org"
     },
     {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": " ",
-      "url": "",
-      "id": 10
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 11
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 12
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 13
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 14
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 15
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 16
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 17
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 18
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 19
-    },
-    {
-      "chiavi": " ",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 20
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": " ",
-      "url": "",
-      "id": 21
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 22
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 23
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 24
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 25
-    },
-    {
-      "chiavi": "",
-      "titolo": "",
-      "descrizione": "",
-      "url": "",
-      "id": 26
-    },
-    {
-      "chiavi": "1",
-      "titolo": "1",
-      "descrizione": "1",
-      "url": "1",
-      "id": 27
+      "chiavi": "qwe",
+      "titolo": "qwe",
+      "descrizione": "qwe",
+      "url": "qwe",
+      "id": 28
     }
   ]
 }

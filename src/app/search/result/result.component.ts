@@ -1,10 +1,10 @@
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/autenticazione/auth.service';
 import { Ser } from './../ser';
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Data } from 'src/app/data.model';
 import { Router } from '@angular/router';
-
-
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./result.component.css'],
 })
 export class ResultComponent implements OnInit {
-  vet!:string; // stringhe della ricerca
+  userSub!: Subscription;
+  isAuthenticated = false;
+  vet!: string; // stringhe della ricerca
   vetD: Data[] = []; // vettore dati filtrati dal db
 
   Admin!: boolean;
@@ -24,83 +26,69 @@ export class ResultComponent implements OnInit {
   indice = 0;
   caricato = false;
 
-  constructor(private http: HttpClient, private ser: Ser , private root:Router) {}
+  constructor(
+    private http: HttpClient,
+    private ser: Ser,
+    private root: Router,
+    private auth: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.ser.Emit.subscribe((item) => this.avvio(item));
-    this.ser.Log.subscribe((bool) => (this.Admin = bool));
-    console.log("admin",this.Admin)
-   
+    this.userSub = this.auth.user.subscribe((user) => {
+      this.Admin = !!user; //!user ? false : true
+    });
   }
-  
-  route(){
-    this.root.navigate(['newData']);
 
+  route() {
+    this.root.navigate(['newData']);
   }
   setDati(dati: Data[]) {
- 
     this.vetD.push(...dati);
-    
+
     this.caricato = true;
     this.npagine();
   }
 
   getDati() {
-    console.log('sono in getDati');
-      let url = 'http://localhost:3000/ricerca';
+    let url = 'http://localhost:3000/ricerca';
+    const headers = { Authorization: 'Bearer ' + this.auth.tocken };
 
-      this.http
-        .get<Data[]>(url, {
-          params: {
-            q: this.vet
-          },
-        })
-        .subscribe((data) => {
-          
-          this.setDati(data);
-
-        });
-    
-
-
+    this.http
+      .get<Data[]>(url, {
+        headers,
+        params: {
+          q: this.vet,
+        },
+      })
+      .subscribe((data) => {
+        this.setDati(data);
+      });
   }
 
   avvio(s: string) {
     this.caricato = false;
     this.pagine = [];
     this.vetD = [];
-    
+
     this.vet = s;
 
     this.getDati();
-    
-
-
-
   }
   npagine() {
-    console.log("vetD_IN_npagine",this.vetD)
     let va = this.vetD.length;
-    console.log("LUNGHEZZA VETD",this.vetD.length)
-    console.log(va)
     va = va / 5;
-    
 
     for (let i = 0; i < va; i++) {
       this.pagine.push(i + 1);
     }
-    console.log(this.pagine);
   }
 
   contatore(c: number) {
-    console.log("c",c)
     this.indice = 0;
     if (c === 0) {
       return;
     }
-    this.indice =   (c) * 5;
+    this.indice = c * 5;
   }
-
-
-
 }

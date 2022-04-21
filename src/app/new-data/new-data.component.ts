@@ -1,52 +1,61 @@
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/autenticazione/auth.service';
 import { Ser } from './../search/ser';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 import { Data } from '../data.model';
-
 
 @Component({
   selector: 'app-new-data',
   templateUrl: './new-data.component.html',
-  styleUrls: ['./new-data.component.css']
+  styleUrls: ['./new-data.component.css'],
 })
 export class NewDataComponent implements OnInit {
-Admin!:boolean;
-id!:number
-dato_form=new FormGroup({
-chiavi:new FormControl(null,Validators.required),
-titolo:new FormControl(null,Validators.required),
-descrizione:new FormControl(null,Validators.required),
-url: new FormControl(null,Validators.required)
-})
+  Admin!: boolean;
+  userSub!: Subscription;
+  id!: number;
+  dato_form = new FormGroup({
+    chiavi: new FormControl(null, Validators.required),
+    titolo: new FormControl(null, Validators.required),
+    descrizione: new FormControl(null, Validators.required),
+    url: new FormControl(null, Validators.required),
+  });
 
-  constructor(private http:HttpClient,private ser:Ser) { 
-    
-  }
+  constructor(
+    private http: HttpClient,
+    private ser: Ser,
+    private auth: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.ser.Log.subscribe((bool)=> this.Admin=bool)
-
-    
-
-  }
- 
-  dimDB() {
-    let v = [];
-
-    this.http.get<Data[]>('http://localhost:3000/ricerca').subscribe((data) => {
-      v = data;
-    
-      this.id = v.length;
-      this.id = Math.ceil(this.id);
-      
-      
+    this.ser.Log.subscribe((bool) => (this.Admin = bool));
+    this.userSub = this.auth.user.subscribe(user => {
+      this.Admin = !!user; //!user ? false : true
+     
     });
   }
-  aggiungi(titolo:string,chiavi:string,descrizione:string,url:string){
-    let dato:Data =new Data(chiavi,this.id,titolo,descrizione,url);
-    this.http.post('http://localhost:3000/ricerca',dato).subscribe(()=> alert("CARICATO"))
 
+  dimDB() {
+    let v = [];
+    const headers = { Authorization: 'Bearer ' + this.auth.tocken };
+    this.http.get<Data[]>('http://localhost:3000/ricerca', {headers}).subscribe((data) => {
+      v = data;
+
+      this.id = v.length;
+      this.id = Math.ceil(this.id);
+    });
+  }
+  aggiungi(titolo: string, chiavi: string, descrizione: string, url: string) {
+    let dato: Data = new Data(chiavi, this.id, titolo, descrizione, url);
+    const headers = { Authorization: 'Bearer ' + this.auth.tocken };
+    this.http
+      .post('http://localhost:3000/ricerca', dato, { headers })
+      .subscribe(() => alert('CARICATO'));
   }
 }

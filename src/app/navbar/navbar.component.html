@@ -34,21 +34,11 @@
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <!-- <li *ngIf="admin">
-                  <a class="dropdown-item" (click)="modeAdmin()">LogOut</a>
-                </li>
-                <li *ngIf="!admin">
-                  <a class="dropdown-item" (click)="modeAdmin()">login</a>
-                </li> -->
                 <li *ngIf="!isAuthenticated">
-                  <a class="dropdown-item" routerLink="/autentication"
-                    >logIn</a
-                  >
+                  <a class="dropdown-item" routerLink="/autentication">logIn</a>
                 </li>
                 <li *ngIf="isAuthenticated">
-                  <a class="dropdown-item" routerLink=""
-                    >logOut</a
-                  >
+                  <a class="dropdown-item" (click)="OnLogOut()">logOut</a>
                 </li>
               </ul>
             </li>

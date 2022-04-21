@@ -1,31 +1,42 @@
 <div class="container-of-search">
   <app-search-page></app-search-page>
-  <!-- *ngIf="Admin == true" -->
   <div *ngIf="Admin == true">
-  <button class="btn btn-success add-div" title="clicca per aggiungere" (click)="route()">
-    +
-  </button>
-</div>
+    <button
+      class="btn btn-success add-div"
+      title="clicca per aggiungere"
+      (click)="route()"
+    >
+      +
+    </button>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col">
         <div class="row">
           <div class="col" *ngIf="caricato">
-            <app-schede *ngIf="vetD.length >= 1 + indice" [dato]="vetD[0 + indice]"></app-schede>
-            <app-schede *ngIf="vetD.length >= 2 + indice" [dato]="vetD[1 + indice]"></app-schede>
-            <app-schede *ngIf="vetD.length >= 3 + indice" [dato]="vetD[2 + indice]"></app-schede>
-            <app-schede *ngIf="vetD.length >= 4 + indice" [dato]="vetD[3 + indice]"></app-schede>
-           <app-schede *ngIf="vetD.length >= 5 +  indice" [dato]="vetD[4 + indice]"></app-schede>
+            <app-schede
+              *ngIf="vetD.length >= 1 + indice"
+              [dato]="vetD[0 + indice]"
+            ></app-schede>
+            <app-schede
+              *ngIf="vetD.length >= 2 + indice"
+              [dato]="vetD[1 + indice]"
+            ></app-schede>
+            <app-schede
+              *ngIf="vetD.length >= 3 + indice"
+              [dato]="vetD[2 + indice]"
+            ></app-schede>
+            <app-schede
+              *ngIf="vetD.length >= 4 + indice"
+              [dato]="vetD[3 + indice]"
+            ></app-schede>
+            <app-schede
+              *ngIf="vetD.length >= 5 + indice"
+              [dato]="vetD[4 + indice]"
+            ></app-schede>
           </div>
         </div>
-        <!-- <div *ngFor="let i of vetD">
-                <div class="row data-row">
-                    <app-schede [dato]="i"></app-schede>
-                </div>
-                <br>
 
-            
-             </div>  -->
         <div class="row page-button-row">
           <div class="col-1" *ngFor="let pag of pagine; let x = index">
             <button class="btn btn-outline-primary" (click)="contatore(x)">
@@ -33,8 +44,6 @@
             </button>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
